@@ -8,6 +8,7 @@ class_name Player
 @export var maxHealth : int = 10
 @export var health : int = maxHealth
 @export var coins : int = 0
+@export var is_hostile : bool=false
 
 
 var facing: Vector2 = Vector2.ZERO
@@ -83,3 +84,9 @@ func die():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit(0)
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	print("ough")
+	if body.class_npc == true :
+		print("npc hit")
