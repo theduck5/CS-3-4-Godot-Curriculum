@@ -14,6 +14,10 @@ class_name npc
 #@export var state
 @export var type : String = ""
 @export var target : Vector2
+@export var damage: int = -20
+
+var damagecooldown: float = 0.5
+var candamage: bool = true
 
 func _ready() -> void:
 	
@@ -50,3 +54,15 @@ func movement(_delta):
 			move_point = 0
 	
 	pass
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body == player and candamage:
+		if body.has_method("change_health"):
+			body.change_health(damage)
+			
+			
+		candamage = false 
+		get_tree().create_timer(damagecooldown).timeout.connect(_reset_damagecooldown)
+func _reset_damagecooldown():
+	candamage = true
