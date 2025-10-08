@@ -63,6 +63,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 			
 			
 		candamage = false 
-		get_tree().create_timer(damagecooldown).timeout.connect(_reset_damagecooldown)
+		
+		**********get_tree().create_timer(damagecooldown).timeout.connect(_reset_damagecooldown)
 func _reset_damagecooldown():
 	candamage = true
