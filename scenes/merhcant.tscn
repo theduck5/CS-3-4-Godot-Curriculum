@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1qn814rhcjyu"]
+
+[ext_resource type="Script" uid="uid://bhvp727ft8xl1" path="res://scripts/merhcant.gd" id="1_nhci7"]
+[ext_resource type="Texture2D" uid="uid://c3xsqy64bvyou" path="res://icon.svg" id="2_48577"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrlm5"]
+size = Vector2(21, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgyj5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_48577")
+}],
+"loop": true,
+"name": &"placeholder",
+"speed": 5.0
+}]
+
+[node name="Merhcant" type="CharacterBody2D"]
+script = ExtResource("1_nhci7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_nrlm5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.4999988, -1.0728836e-06)
+scale = Vector2(0.1640625, 0.15624999)
+sprite_frames = SubResource("SpriteFrames_lgyj5")
+animation = &"placeholder"
+autoplay = "placeholder"
