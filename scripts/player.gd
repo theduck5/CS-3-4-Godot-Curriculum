@@ -85,5 +85,5 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit(0)
 
-func knockback(direction):
+func knockback(direction: Vector2, knockbackstrength: float, duration: float) -> void:
 	velocity += direction * knockbackstrength
