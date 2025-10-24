@@ -16,6 +16,8 @@ class_name npc
 @export var target : Vector2
 @export var damage: int = -20
 
+var knockback: Vector2=Vector2.ZERO
+var knockback_cooldown: float = 0
 var damagecooldown: float = 0.5
 var candamage: bool = true
 
@@ -24,9 +26,15 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	movement(delta)
+	if knockback_cooldown > 0.0:
+		velocity = knockback
+		knockback_cooldown -= delta
+		if knockback_cooldown <= 0.0:
+			knockback = Vector2.ZERO
+	else: 
+		movement(delta)
 	move_and_slide()
-	pass
+	
 	
 
 func _on_detection_radius_body_entered(body: Node2D) -> void:
@@ -46,24 +54,18 @@ func movement(_delta):
 		target = player.position
 	else:
 		target = move_points[move_point]
+		if position.distance_to(target)<10:
+			move_point+=1
+			if move_point > move_points.size()-1:
+				move_point = 0
 	var target_direction = position.direction_to(target)
 	velocity = speed * target_direction
-	if position.distance_to(target)<10:
-		move_point+=1
-		if move_point > move_points.size()-1:
-			move_point = 0
+
 	
 	pass
 
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body == player and candamage:
-		if body.has_method("change_health"):
-			body.change_health(damage)
-			
-			
-		candamage = false 
-		
-	#get_tree().create_timer(damagecooldown).timeout.connect(_reset_damagecooldown)
-func _reset_damagecooldown():
-	candamage = true
+	
+func apply_knockback(direction: Vector2, strength: float, duration: float) -> void:
+	knockback = direction * strength
+	knockback_cooldown = duration

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1qn814rhcjyu"]
+[gd_scene load_steps=6 format=3 uid="uid://c1qn814rhcjyu"]
 
 [ext_resource type="Script" uid="uid://bhvp727ft8xl1" path="res://scripts/merhcant.gd" id="1_nhci7"]
 [ext_resource type="Texture2D" uid="uid://c3xsqy64bvyou" path="res://icon.svg" id="2_48577"]
@@ -17,6 +17,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhci7"]
+radius = 24.0
+
 [node name="Merhcant" type="CharacterBody2D"]
 script = ExtResource("1_nhci7")
 
@@ -30,3 +33,11 @@ scale = Vector2(0.1640625, 0.15624999)
 sprite_frames = SubResource("SpriteFrames_lgyj5")
 animation = &"placeholder"
 autoplay = "placeholder"
+
+[node name="interact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact"]
+shape = SubResource("CircleShape2D_nhci7")
+
+[connection signal="body_entered" from="interact" to="." method="_on_interact_body_entered"]
+[connection signal="body_exited" from="interact" to="." method="_on_interact_body_exited"]
