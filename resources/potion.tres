@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="inventory_item" load_steps=2 format=3 uid="uid://by44x2tfx7iwq"]
 
-[ext_resource type="Script" uid="uid://dx7bbwkoj1r5d" path="res://scripts/inventory.gd" id="1_vue1v"]
+[ext_resource type="Script" uid="uid://dx7bbwkoj1r5d" path="res://scripts/inventoryitem.gd" id="1_vue1v"]
 
 [resource]
 script = ExtResource("1_vue1v")

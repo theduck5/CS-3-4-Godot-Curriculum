@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://5p2ev4o8h7si" path="res://scenes/lever.tscn" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://c6gaa4kprawy0" path="res://scenes/enemies/slime.tscn" id="11_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://c1qn814rhcjyu" path="res://scenes/merhcant.tscn" id="12_jkv2x"]
-[ext_resource type="Script" uid="uid://dx7bbwkoj1r5d" path="res://scripts/inventory.gd" id="13_jbj1t"]
+[ext_resource type="Script" uid="uid://dx7bbwkoj1r5d" path="res://scripts/inventoryitem.gd" id="13_jbj1t"]
 [ext_resource type="Resource" uid="uid://by44x2tfx7iwq" path="res://resources/potion.tres" id="14_muem4"]
 [ext_resource type="Resource" uid="uid://ql1sxxc1cwdt" path="res://resources/straightpinskongk.tres" id="15_dp3eg"]
 
