@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1qn814rhcjyu"]
+[gd_scene load_steps=7 format=3 uid="uid://c1qn814rhcjyu"]
 
 [ext_resource type="Script" uid="uid://bhvp727ft8xl1" path="res://scripts/merhcant.gd" id="1_nhci7"]
 [ext_resource type="Texture2D" uid="uid://c3xsqy64bvyou" path="res://icon.svg" id="2_48577"]
+[ext_resource type="Script" uid="uid://c6pshvej5yf85" path="res://scripts/inventory.gd" id="3_48577"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrlm5"]
 size = Vector2(21, 20)
@@ -38,6 +39,9 @@ autoplay = "placeholder"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact"]
 shape = SubResource("CircleShape2D_nhci7")
+
+[node name="inventory" type="Node2D" parent="."]
+script = ExtResource("3_48577")
 
 [connection signal="body_entered" from="interact" to="." method="_on_interact_body_entered"]
 [connection signal="body_exited" from="interact" to="." method="_on_interact_body_exited"]

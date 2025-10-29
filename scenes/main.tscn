@@ -98,4 +98,8 @@ move_points = Array[Vector2]([Vector2(-469, 124), Vector2(-324, -19)])
 [node name="Merhcant" parent="." instance=ExtResource("12_jkv2x")]
 position = Vector2(357, 7)
 move_points = Array[Vector2]([Vector2(357, 10), Vector2(357, -50)])
+
+[node name="inventory" parent="Merhcant" index="3"]
 inventory = Array[ExtResource("13_jbj1t")]([ExtResource("14_muem4"), ExtResource("15_dp3eg")])
+
+[editable path="Merhcant"]

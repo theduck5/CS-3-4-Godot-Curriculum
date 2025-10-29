@@ -9,7 +9,7 @@ class_name npc
 @export var move_points : Array[Vector2] = []
 @export var move_point : int = 0
 @export var dialogue : Array[String] = []
-@export var inventory: Array[inventory_item]
+
 @export var inventory_drop : int = 0
 #@export var state
 @export var type : String = ""
