@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ProjectileWeaponResource" load_steps=5 format=3 uid="uid://ukdo44ltw8ap"]
+
+[ext_resource type="Texture2D" uid="uid://cqatq7nlwor0e" path="res://assets/point_arrow.png" id="1_cme0y"]
+[ext_resource type="Resource" uid="uid://b6qybklc42skm" path="res://resources/projectiles/rifle_projectile.tres" id="2_b0yaa"]
+[ext_resource type="Script" uid="uid://c6yex7bm6vt2g" path="res://scripts/resources/projectile_weapon_resource.gd" id="3_0lkds"]
+[ext_resource type="Texture2D" uid="uid://b3l1sq0mb0js2" path="res://assets/2D Pixel Dungeon Asset Pack/interface/arrow_1.png" id="4_0lkds"]
+
+[resource]
+script = ExtResource("3_0lkds")
+projectile_config = ExtResource("2_b0yaa")
+spread_angle = 0.0
+item_id = "rifle"
+item_name = "Rifle"
+description = "Rifle"
+icon = ExtResource("1_cme0y")
+value = 50
+base_damage = 30.0
+accuracy_spread = 5.0
+weapon_sprite = ExtResource("4_0lkds")
